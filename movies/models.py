@@ -38,7 +38,6 @@ class Person(TimeStampedModel):
         primary_key=True
     )
     full_name = models.CharField(_('Имя'), max_length=255)
-    # blank=True делает поле необязательным для заполнения.
     birth_date = models.DateField(_('Дата рождения'), blank=True)
 
     def __str__(self):
@@ -47,7 +46,6 @@ class Person(TimeStampedModel):
     class Meta:
         verbose_name = _('Персонаж')
         verbose_name_plural = _('Персонажи')
-        # Ваши таблицы находятся в нестандартной схеме.
         db_table = "content\".\"person"
 
 
