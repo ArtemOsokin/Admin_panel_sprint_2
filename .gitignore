@@ -38,7 +38,7 @@ coverage.xml
 .hypothesis/
 
 # dotenv
-.env
+movies_admin/.env
 
 # virtualenv
 venv/
@@ -50,3 +50,8 @@ ENV/
 
 # auto generated docs
 doc.html
+movies_admin/movies/.DS_Store
+.gitignore
+.DS_Store
+
+data/**
