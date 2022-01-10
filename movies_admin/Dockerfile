@@ -3,7 +3,6 @@ FROM python:3.9.6-alpine
 
 # set work directory
 RUN pip install pipenv
-RUN mkdir -p /usr/src/movies_admin/
 WORKDIR /usr/src/movies_admin/
 
 # set environment variables
@@ -17,3 +16,5 @@ RUN pip install -r requirements.txt
 
 # copy project
 COPY . /usr/src/movies_admin/
+RUN ["chmod", "+x", "/usr/src/movies_admin/entrypoint.sh"]
+ENTRYPOINT ["/usr/src/movies_admin/entrypoint.sh"]

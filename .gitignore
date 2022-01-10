@@ -54,4 +54,4 @@ movies_admin/movies/.DS_Store
 .gitignore
 .DS_Store
 
-data/**
+movies_admin/sqlite_to_postgres/**
