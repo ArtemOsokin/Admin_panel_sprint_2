@@ -12,9 +12,9 @@ RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
 # install dependencies
 RUN pip install --upgrade pip
 COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --no-cache-dir
 
 # copy project
 COPY . /usr/src/movies_admin/
-RUN ["chmod", "+x", "/usr/src/movies_admin/entrypoint.sh"]
-ENTRYPOINT ["/usr/src/movies_admin/entrypoint.sh"]
+CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
+
