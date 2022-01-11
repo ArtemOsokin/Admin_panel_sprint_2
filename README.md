@@ -36,13 +36,18 @@
 2. Для взаимодействия между контейнерами используйте docker compose.
 
 ##Запуск проекта
+
 Осуществляется с помощью docker-compose. 
+
 **`docker-compose up -d --build`**
+
 После первой сборки требуется выполнить поочерёдно несколько команд:
+
 1. Выполнить миграции
-`docker-compose exec web python manage.py migrate movies --fake
-docker-compose exec web python manage.py migrate --fake-initial
-docker-compose exec web python manage.py migrate`
+- `docker-compose exec web python manage.py migrate movies --fake`
+- `docker-compose exec web python manage.py migrate --fake-initial`
+- `docker-compose exec web python manage.py migrate`
 
 2. Выкатить статику проекта:
+
 `docker-compose exec web python manage.py collectstatic  --noinput`
