@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJ_SECRET_KEY')
+SECRET_KEY = os.getenv('DJ_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', default=True)
@@ -103,7 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
 STATIC_URL = '/static/'
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = BASE_DIR / 'static'
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'

@@ -63,7 +63,7 @@ class FilmworkGenre(models.Model):
         db_table = "content\".\"genre_film_work"
         constraints = [
             models.UniqueConstraint(
-                fields=['film_work_id', 'genre_id'],
+                fields=['film_work', 'genre'],
                 name='unique_film_work_genre'
             ),
         ]
@@ -95,7 +95,7 @@ class FilmworkPerson(models.Model):
         db_table = "content\".\"person_film_work"
         constraints = [
             models.UniqueConstraint(
-                fields=['film_work_id', 'person_id', 'role'],
+                fields=['person', 'role', 'film_work',],
                 name='unique_film_work_person_role'
             ),
         ]
